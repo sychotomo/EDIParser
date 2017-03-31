@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="abhi$sources_2.10"
+		revision="1.0"
+		conf="provided"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20170331001113"/>
+	<dependencies>
+		<module organisation="spark.jobserver" name="job-server-extras_2.10">
+			<revision name="0.6.2" status="release" pubdate="20160425113748" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="4252" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-extras_2.10/ivy-0.6.2.xml" searched="false" origin-is-local="false" origin-location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/job-server-extras_2.10/0.6.2/job-server-extras_2.10-0.6.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="0.6.2" rev-constraint-default="0.6.2" rev-constraint-dynamic="0.6.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server-extras_2.10" type="jar" ext="jar" status="no" details="" size="61632" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-extras_2.10/jars/job-server-extras_2.10-0.6.2.jar">
+						<origin-location is-local="false" location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/job-server-extras_2.10/0.6.2/job-server-extras_2.10-0.6.2.jar"/>
+					</artifact>
+					<artifact name="job-server-extras_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="9055" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-extras_2.10/srcs/job-server-extras_2.10-0.6.2-sources.jar">
+						<origin-location is-local="false" location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/job-server-extras_2.10/0.6.2/job-server-extras_2.10-0.6.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="job-server_2.10">
+			<revision name="0.6.2" status="release" pubdate="20160425113732" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="4743" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server_2.10/ivy-0.6.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/spark/jobserver/job-server_2.10/0.6.2/job-server_2.10-0.6.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="0.6.2" rev-constraint-default="0.6.2" rev-constraint-dynamic="0.6.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server_2.10" type="jar" ext="jar" status="no" details="" size="831423" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server_2.10/jars/job-server_2.10-0.6.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/spark/jobserver/job-server_2.10/0.6.2/job-server_2.10-0.6.2.jar"/>
+					</artifact>
+					<artifact name="job-server_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="122225" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server_2.10/srcs/job-server_2.10-0.6.2-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/spark/jobserver/job-server_2.10/0.6.2/job-server_2.10-0.6.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.shiro" name="shiro-core">
+			<revision name="1.2.4" status="release" pubdate="20150729092217" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="36">
+				<metadata-artifact status="no" details="" size="20442" time="0" location="/home/abhishek/.ivy2/cache/org.apache.shiro/shiro-core/ivy-1.2.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="shiro-core" type="jar" ext="jar" status="no" details="" size="379541" time="0" location="/home/abhishek/.ivy2/cache/org.apache.shiro/shiro-core/jars/shiro-core-1.2.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.jar"/>
+					</artifact>
+					<artifact name="shiro-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="568346" time="0" location="/home/abhishek/.ivy2/cache/org.apache.shiro/shiro-core/srcs/shiro-core-1.2.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-beanutils" name="commons-beanutils">
+			<revision name="1.8.3" status="release" pubdate="20100324224600" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/beanutils/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="37">
+				<metadata-artifact status="no" details="" size="6350" time="0" location="/home/abhishek/.ivy2/cache/commons-beanutils/commons-beanutils/ivy-1.8.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.8.3" rev-constraint-default="1.8.3" rev-constraint-dynamic="1.8.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-beanutils" type="jar" ext="jar" status="no" details="" size="232019" time="0" location="/home/abhishek/.ivy2/cache/commons-beanutils/commons-beanutils/jars/commons-beanutils-1.8.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar"/>
+					</artifact>
+					<artifact name="commons-beanutils" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="296761" time="0" location="/home/abhishek/.ivy2/cache/commons-beanutils/commons-beanutils/srcs/commons-beanutils-1.8.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.flywaydb" name="flyway-core">
+			<revision name="3.2.1" status="release" pubdate="20150320202300" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="35">
+				<license name="Apache License, Version 2.0" url="https://github.com/flyway/flyway/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="16519" time="0" location="/home/abhishek/.ivy2/cache/org.flywaydb/flyway-core/ivy-3.2.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="3.2.1" rev-constraint-default="3.2.1" rev-constraint-dynamic="3.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="flyway-core" type="jar" ext="jar" status="no" details="" size="292011" time="0" location="/home/abhishek/.ivy2/cache/org.flywaydb/flyway-core/jars/flyway-core-3.2.1.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1.jar"/>
+					</artifact>
+					<artifact name="flyway-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="264186" time="0" location="/home/abhishek/.ivy2/cache/org.flywaydb/flyway-core/srcs/flyway-core-3.2.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-dbcp" name="commons-dbcp">
+			<revision name="1.4" status="release" pubdate="20100207232626" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/dbcp/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="33">
+				<metadata-artifact status="no" details="" size="5629" time="0" location="/home/abhishek/.ivy2/cache/commons-dbcp/commons-dbcp/ivy-1.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.4" rev-constraint-default="1.4" rev-constraint-dynamic="1.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-dbcp" type="jar" ext="jar" status="no" details="" size="160519" time="0" location="/home/abhishek/.ivy2/cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar"/>
+					</artifact>
+					<artifact name="commons-dbcp" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="159513" time="0" location="/home/abhishek/.ivy2/cache/commons-dbcp/commons-dbcp/srcs/commons-dbcp-1.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-pool" name="commons-pool">
+			<revision name="1.5.4" status="release" pubdate="20091113071653" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/pool/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="34">
+				<metadata-artifact status="no" details="" size="4814" time="0" location="/home/abhishek/.ivy2/cache/commons-pool/commons-pool/ivy-1.5.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.5.4" rev-constraint-default="1.5.4" rev-constraint-dynamic="1.5.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-pool" type="jar" ext="jar" status="no" details="" size="96221" time="0" location="/home/abhishek/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.5.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar"/>
+					</artifact>
+					<artifact name="commons-pool" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="96194" time="0" location="/home/abhishek/.ivy2/cache/commons-pool/commons-pool/srcs/commons-pool-1.5.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.h2database" name="h2">
+			<revision name="1.3.176" status="release" pubdate="20140405182900" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="32">
+				<license name="The H2 License, Version 1.0" url="http://h2database.com/html/license.html"/>
+				<metadata-artifact status="no" details="" size="2337" time="0" location="/home/abhishek/.ivy2/cache/com.h2database/h2/ivy-1.3.176.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/h2database/h2/1.3.176/h2-1.3.176.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.176" rev-constraint-default="1.3.176" rev-constraint-dynamic="1.3.176" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="h2" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1175288" time="0" location="/home/abhishek/.ivy2/cache/com.h2database/h2/srcs/h2-1.3.176-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/h2database/h2/1.3.176/h2-1.3.176-sources.jar"/>
+					</artifact>
+					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1659879" time="0" location="/home/abhishek/.ivy2/cache/com.h2database/h2/jars/h2-1.3.176.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/h2database/h2/1.3.176/h2-1.3.176.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.slick" name="slick_2.10">
+			<revision name="2.1.0" status="release" pubdate="20140804131900" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="31">
+				<license name="Two-clause BSD-style license" url="http://github.com/slick/slick/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="2978" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.slick/slick_2.10/ivy-2.1.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/2.1.0/slick_2.10-2.1.0.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.1.0" rev-constraint-default="2.1.0" rev-constraint-dynamic="2.1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="slick_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="230839" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.slick/slick_2.10/srcs/slick_2.10-2.1.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/2.1.0/slick_2.10-2.1.0-sources.jar"/>
+					</artifact>
+					<artifact name="slick_2.10" type="jar" ext="jar" status="no" details="" size="3889528" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.slick/slick_2.10/jars/slick_2.10-2.1.0.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/2.1.0/slick_2.10-2.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="akka-app_2.10">
+			<revision name="0.6.2" status="release" pubdate="20160425113724" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="5313" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/akka-app_2.10/ivy-0.6.2.xml" searched="false" origin-is-local="false" origin-location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/akka-app_2.10/0.6.2/akka-app_2.10-0.6.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="0.6.2" rev-constraint-default="0.6.2" rev-constraint-dynamic="0.6.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-app_2.10" type="jar" ext="jar" status="no" details="" size="81283" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/akka-app_2.10/jars/akka-app_2.10-0.6.2.jar">
+						<origin-location is-local="false" location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/akka-app_2.10/0.6.2/akka-app_2.10-0.6.2.jar"/>
+					</artifact>
+					<artifact name="akka-app_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="9979" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/akka-app_2.10/srcs/akka-app_2.10-0.6.2-sources.jar">
+						<origin-location is-local="false" location="https://dl.bintray.com/spark-jobserver/maven/spark/jobserver/akka-app_2.10/0.6.2/akka-app_2.10-0.6.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="joda-time" name="joda-time">
+			<revision name="2.9.3" status="release" pubdate="20160328010531" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="30">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6469" time="0" location="/home/abhishek/.ivy2/cache/joda-time/joda-time/ivy-2.9.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/joda-time/joda-time/2.9.3/joda-time-2.9.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.9.3" rev-constraint-default="2.9.3" rev-constraint-dynamic="2.9.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="627814" time="0" location="/home/abhishek/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.9.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/joda-time/joda-time/2.9.3/joda-time-2.9.3.jar"/>
+					</artifact>
+					<artifact name="joda-time" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="770784" time="0" location="/home/abhishek/.ivy2/cache/joda-time/joda-time/srcs/joda-time-2.9.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/joda-time/joda-time/2.9.3/joda-time-2.9.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.joda" name="joda-convert">
+			<revision name="1.8.1" status="release" pubdate="20151002162804" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="29">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6308" time="0" location="/home/abhishek/.ivy2/cache/org.joda/joda-convert/ivy-1.8.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/joda/joda-convert/1.8.1/joda-convert-1.8.1.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.8.1" rev-constraint-default="1.8.1" rev-constraint-dynamic="1.8.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="joda-convert" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45686" time="0" location="/home/abhishek/.ivy2/cache/org.joda/joda-convert/srcs/joda-convert-1.8.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/joda/joda-convert/1.8.1/joda-convert-1.8.1-sources.jar"/>
+					</artifact>
+					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="111521" time="0" location="/home/abhishek/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.8.1.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/joda/joda-convert/1.8.1/joda-convert-1.8.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.yammer.metrics" name="metrics-core">
+			<revision name="2.2.0" status="release" pubdate="20121127014108" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="27">
+				<metadata-artifact status="no" details="" size="4088" time="0" location="/home/abhishek/.ivy2/cache/com.yammer.metrics/metrics-core/ivy-2.2.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="metrics-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="46705" time="0" location="/home/abhishek/.ivy2/cache/com.yammer.metrics/metrics-core/srcs/metrics-core-2.2.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0-sources.jar"/>
+					</artifact>
+					<artifact name="metrics-core" type="jar" ext="jar" status="no" details="" size="82123" time="0" location="/home/abhishek/.ivy2/cache/com.yammer.metrics/metrics-core/jars/metrics-core-2.2.0.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.2" status="release" pubdate="20121012002524" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="28">
+				<metadata-artifact status="no" details="" size="4475" time="0" location="/home/abhishek/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="47186" time="0" location="/home/abhishek/.ivy2/cache/org.slf4j/slf4j-api/srcs/slf4j-api-1.7.2-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-client_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324192200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="26">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3573" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-client_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-client_2.10/1.3.3/spray-client_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-client_2.10" type="jar" ext="jar" status="no" details="" size="45071" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-client_2.10/jars/spray-client_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-client_2.10/1.3.3/spray-client_2.10-1.3.3.jar"/>
+					</artifact>
+					<artifact name="spray-client_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3912" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-client_2.10/srcs/spray-client_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-client_2.10/1.3.3/spray-client_2.10-1.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-routing_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324191800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="22">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3624" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-routing_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-routing_2.10/1.3.3/spray-routing_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-routing_2.10" type="jar" ext="jar" status="no" details="" size="1095810" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-routing_2.10/jars/spray-routing_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-routing_2.10/1.3.3/spray-routing_2.10-1.3.3.jar"/>
+					</artifact>
+					<artifact name="spray-routing_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="80455" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-routing_2.10/srcs/spray-routing_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-routing_2.10/1.3.3/spray-routing_2.10-1.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.chuusai" name="shapeless_2.10">
+			<revision name="1.2.4" status="release" pubdate="20130227012121" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/milessabin/shapeless" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="25">
+				<license name="Apache License" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="2646" time="0" location="/home/abhishek/.ivy2/cache/com.chuusai/shapeless_2.10/ivy-1.2.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="shapeless_2.10" type="jar" ext="jar" status="no" details="" size="1280423" time="0" location="/home/abhishek/.ivy2/cache/com.chuusai/shapeless_2.10/jars/shapeless_2.10-1.2.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4.jar"/>
+					</artifact>
+					<artifact name="shapeless_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="74241" time="0" location="/home/abhishek/.ivy2/cache/com.chuusai/shapeless_2.10/srcs/shapeless_2.10-1.2.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-httpx_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324192100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="23">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4354" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-httpx_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-httpx_2.10/1.3.3/spray-httpx_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-httpx_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45491" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-httpx_2.10/srcs/spray-httpx_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-httpx_2.10/1.3.3/spray-httpx_2.10-1.3.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-httpx_2.10" type="jar" ext="jar" status="no" details="" size="463821" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-httpx_2.10/jars/spray-httpx_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-httpx_2.10/1.3.3/spray-httpx_2.10-1.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jvnet.mimepull" name="mimepull">
+			<revision name="1.9.5" status="release" pubdate="20150313164000" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://mimepull.java.net" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="24">
+				<license name="CDDL 1.1" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<license name="GPL2 w/ CPE" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<metadata-artifact status="no" details="" size="3827" time="0" location="/home/abhishek/.ivy2/cache/org.jvnet.mimepull/mimepull/ivy-1.9.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.9.5" rev-constraint-default="1.9.5" rev-constraint-dynamic="1.9.5" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mimepull" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="68147" time="0" location="/home/abhishek/.ivy2/cache/org.jvnet.mimepull/mimepull/srcs/mimepull-1.9.5-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5-sources.jar"/>
+					</artifact>
+					<artifact name="mimepull" type="jar" ext="jar" status="no" details="" size="63621" time="0" location="/home/abhishek/.ivy2/cache/org.jvnet.mimepull/mimepull/jars/mimepull-1.9.5.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-caching_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324192100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="20">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3203" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-caching_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-caching_2.10/1.3.3/spray-caching_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-caching_2.10" type="jar" ext="jar" status="no" details="" size="29821" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-caching_2.10/jars/spray-caching_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-caching_2.10/1.3.3/spray-caching_2.10-1.3.3.jar"/>
+					</artifact>
+					<artifact name="spray-caching_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4852" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-caching_2.10/srcs/spray-caching_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-caching_2.10/1.3.3/spray-caching_2.10-1.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.googlecode.concurrentlinkedhashmap" name="concurrentlinkedhashmap-lru">
+			<revision name="1.4.2" status="release" pubdate="20150128070000" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/concurrentlinkedhashmap" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="21">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="5094" time="0" location="/home/abhishek/.ivy2/cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/ivy-1.4.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.4.2" rev-constraint-default="1.4.2" rev-constraint-dynamic="1.4.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="concurrentlinkedhashmap-lru" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="57410" time="0" location="/home/abhishek/.ivy2/cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/srcs/concurrentlinkedhashmap-lru-1.4.2-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2-sources.jar"/>
+					</artifact>
+					<artifact name="concurrentlinkedhashmap-lru" type="jar" ext="jar" status="no" details="" size="116565" time="0" location="/home/abhishek/.ivy2/cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.4.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-can_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324191700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="14">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3423" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-can_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-can_2.10/1.3.3/spray-can_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-can_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="84515" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-can_2.10/srcs/spray-can_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-can_2.10/1.3.3/spray-can_2.10-1.3.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-can_2.10" type="jar" ext="jar" status="no" details="" size="735272" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-can_2.10/jars/spray-can_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-can_2.10/1.3.3/spray-can_2.10-1.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-io_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324192200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="15">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3184" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-io_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-io_2.10/1.3.3/spray-io_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-io_2.10" type="jar" ext="jar" status="no" details="" size="196676" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-io_2.10/jars/spray-io_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-io_2.10/1.3.3/spray-io_2.10-1.3.3.jar"/>
+					</artifact>
+					<artifact name="spray-io_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="20764" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-io_2.10/srcs/spray-io_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-io_2.10/1.3.3/spray-io_2.10-1.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-http_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324192000" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3165" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-http_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-http_2.10/1.3.3/spray-http_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-http_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="99072" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-http_2.10/srcs/spray-http_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-http_2.10/1.3.3/spray-http_2.10-1.3.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-http_2.10" type="jar" ext="jar" status="no" details="" size="1525222" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-http_2.10/jars/spray-http_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-http_2.10/1.3.3/spray-http_2.10-1.3.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-scala_2.10">
+			<revision name="1.1.7" status="release" pubdate="20150209214100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2968" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-scala_2.10/ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-scala_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="28671" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-scala_2.10/srcs/parboiled-scala_2.10-1.1.7-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7-sources.jar"/>
+					</artifact>
+					<artifact name="parboiled-scala_2.10" type="jar" ext="jar" status="no" details="" size="237145" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-scala_2.10/jars/parboiled-scala_2.10-1.1.7.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-core">
+			<revision name="1.1.7" status="release" pubdate="20150209214200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="19">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2663" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-core/ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-core" type="jar" ext="jar" status="no" details="" size="186607" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-core/jars/parboiled-core-1.1.7.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar"/>
+					</artifact>
+					<artifact name="parboiled-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="166639" time="0" location="/home/abhishek/.ivy2/cache/org.parboiled/parboiled-core/srcs/parboiled-core-1.1.7-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-util_2.10">
+			<revision name="1.3.3" status="release" pubdate="20150324191800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="16">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3152" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-util_2.10/ivy-1.3.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-util_2.10/1.3.3/spray-util_2.10-1.3.3.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.3" rev-constraint-default="1.3.3" rev-constraint-dynamic="1.3.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-util_2.10" type="jar" ext="jar" status="no" details="" size="129242" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-util_2.10/jars/spray-util_2.10-1.3.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-util_2.10/1.3.3/spray-util_2.10-1.3.3.jar"/>
+					</artifact>
+					<artifact name="spray-util_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="29891" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-util_2.10/srcs/spray-util_2.10-1.3.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-util_2.10/1.3.3/spray-util_2.10-1.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-json_2.10">
+			<revision name="1.3.2" status="release" pubdate="20150506193100" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spray/spray-json" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="13">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2957" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-json_2.10/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/spray/spray-json_2.10/1.3.2/spray-json_2.10-1.3.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-json_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="22871" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-json_2.10/srcs/spray-json_2.10-1.3.2-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-json_2.10/1.3.2/spray-json_2.10-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-json_2.10" type="jar" ext="jar" status="no" details="" size="289719" time="0" location="/home/abhishek/.ivy2/cache/io.spray/spray-json_2.10/jars/spray-json_2.10-1.3.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-json_2.10/1.3.2/spray-json_2.10-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-cluster_2.10">
+			<revision name="2.3.15" status="release" pubdate="20160402022413" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="10">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3184" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-cluster_2.10/ivy-2.3.15.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/akka/akka-cluster_2.10/2.3.15/akka-cluster_2.10-2.3.15.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.3.15" rev-constraint-default="2.3.15" rev-constraint-dynamic="2.3.15" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-cluster_2.10" type="jar" ext="jar" status="no" details="" size="1075401" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-cluster_2.10/jars/akka-cluster_2.10-2.3.15.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-cluster_2.10/2.3.15/akka-cluster_2.10-2.3.15.jar"/>
+					</artifact>
+					<artifact name="akka-cluster_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="122683" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-cluster_2.10/srcs/akka-cluster_2.10-2.3.15-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-cluster_2.10/2.3.15/akka-cluster_2.10-2.3.15-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-remote_2.10">
+			<revision name="2.3.15" status="release" pubdate="20160402022415" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3826" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/ivy-2.3.15.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/akka/akka-remote_2.10/2.3.15/akka-remote_2.10-2.3.15.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.3.15" rev-constraint-default="2.3.15" rev-constraint-dynamic="2.3.15" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-remote_2.10" type="jar" ext="jar" status="no" details="" size="1371289" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/jars/akka-remote_2.10-2.3.15.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-remote_2.10/2.3.15/akka-remote_2.10-2.3.15.jar"/>
+					</artifact>
+					<artifact name="akka-remote_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="145138" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-remote_2.10/srcs/akka-remote_2.10-2.3.15-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-remote_2.10/2.3.15/akka-remote_2.10-2.3.15-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
+			<revision name="2.3.15" status="release" pubdate="20160401153301" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2667" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/ivy-2.3.15.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/akka/akka-actor_2.10/2.3.15/akka-actor_2.10-2.3.15.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.3.15" rev-constraint-default="2.3.15" rev-constraint-dynamic="2.3.15" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-actor_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="337160" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/srcs/akka-actor_2.10-2.3.15-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-actor_2.10/2.3.15/akka-actor_2.10-2.3.15-sources.jar"/>
+					</artifact>
+					<artifact name="akka-actor_2.10" type="jar" ext="jar" status="no" details="" size="2819210" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.15.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-actor_2.10/2.3.15/akka-actor_2.10-2.3.15.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="job-server-api_2.10">
+			<revision name="0.6.2" status="release" pubdate="20160425113741" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="3320" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-api_2.10/ivy-0.6.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/spark/jobserver/job-server-api_2.10/0.6.2/job-server-api_2.10-0.6.2.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="0.6.2" rev-constraint-default="0.6.2" rev-constraint-dynamic="0.6.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server-api_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7691" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-api_2.10/srcs/job-server-api_2.10-0.6.2-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/spark/jobserver/job-server-api_2.10/0.6.2/job-server-api_2.10-0.6.2-sources.jar"/>
+					</artifact>
+					<artifact name="job-server-api_2.10" type="jar" ext="jar" status="no" details="" size="33267" time="0" location="/home/abhishek/.ivy2/cache/spark.jobserver/job-server-api_2.10/jars/job-server-api_2.10-0.6.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/spark/jobserver/job-server-api_2.10/0.6.2/job-server-api_2.10-0.6.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.3.0" status="release" pubdate="20150508211600" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2749" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe/config/ivy-1.3.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/config/1.3.0/config-1.3.0.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.3.0" rev-constraint-default="1.3.0" rev-constraint-dynamic="1.3.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="config" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="167084" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe/config/srcs/config-1.3.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/config/1.3.0/config-1.3.0-sources.jar"/>
+					</artifact>
+					<artifact name="config" type="jar" ext="jar" status="no" details="" size="277782" time="0" location="/home/abhishek/.ivy2/cache/com.typesafe/config/jars/config-1.3.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/config/1.3.0/config-1.3.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.6" status="release" pubdate="20150918150528" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/home/abhishek/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1065535" time="0" location="/home/abhishek/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6-sources.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7132001" time="0" location="/home/abhishek/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.6.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.uncommons.maths" name="uncommons-maths">
+			<revision name="1.2.2a" status="release" pubdate="20110408192605" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://maths.uncommons.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2750" time="0" location="/home/abhishek/.ivy2/cache/org.uncommons.maths/uncommons-maths/ivy-1.2.2a.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="1.2.2a" rev-constraint-default="1.2.2a" rev-constraint-dynamic="1.2.2a" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="uncommons-maths" type="jar" ext="jar" status="no" details="" size="49019" time="0" location="/home/abhishek/.ivy2/cache/org.uncommons.maths/uncommons-maths/jars/uncommons-maths-1.2.2a.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.jar"/>
+					</artifact>
+					<artifact name="uncommons-maths" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="61093" time="0" location="/home/abhishek/.ivy2/cache/org.uncommons.maths/uncommons-maths/srcs/uncommons-maths-1.2.2a-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty">
+			<revision name="3.8.0.Final" status="release" pubdate="20131110161654" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="6521" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty/ivy-3.8.0.Final.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/netty/netty/3.8.0.Final/netty-3.8.0.Final.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="3.8.0.Final" rev-constraint-default="3.8.0.Final" rev-constraint-dynamic="3.8.0.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="netty" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1079966" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty/srcs/netty-3.8.0.Final-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty/3.8.0.Final/netty-3.8.0.Final-sources.jar"/>
+					</artifact>
+					<artifact name="netty" type="jar" ext="jar" status="no" details="" size="1230201" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty/jars/netty-3.8.0.Final.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty/3.8.0.Final/netty-3.8.0.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-all">
+			<revision name="4.0.29.Final" status="release" pubdate="20150623151400" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+				<metadata-artifact status="no" details="" size="18504" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty-all/ivy-4.0.29.Final.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="4.0.29.Final" rev-constraint-default="4.0.29.Final" rev-constraint-dynamic="4.0.29.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="netty-all" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1655607" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty-all/srcs/netty-all-4.0.29.Final-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final-sources.jar"/>
+					</artifact>
+					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="2054931" time="0" location="/home/abhishek/.ivy2/cache/io.netty/netty-all/jars/netty-all-4.0.29.Final.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.protobuf" name="protobuf-java">
+			<revision name="2.5.0" status="release" pubdate="20130308054811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
+				<license name="New BSD license" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="3013" time="0" location="/home/abhishek/.ivy2/cache/com.google.protobuf/protobuf-java/ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.pom"/>
+				<caller organisation="default" name="abhi$sources_2.10" conf="provided" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="protobuf-java" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="276990" time="0" location="/home/abhishek/.ivy2/cache/com.google.protobuf/protobuf-java/srcs/protobuf-java-2.5.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0-sources.jar"/>
+					</artifact>
+					<artifact name="protobuf-java" type="jar" ext="jar" status="no" details="" size="533455" time="0" location="/home/abhishek/.ivy2/cache/com.google.protobuf/protobuf-java/jars/protobuf-java-2.5.0.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

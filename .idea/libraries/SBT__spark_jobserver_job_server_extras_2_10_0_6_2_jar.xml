@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: spark.jobserver:job-server-extras_2.10:0.6.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/spark.jobserver/job-server-extras_2.10/jars/job-server-extras_2.10-0.6.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/spark.jobserver/job-server-extras_2.10/srcs/job-server-extras_2.10-0.6.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
