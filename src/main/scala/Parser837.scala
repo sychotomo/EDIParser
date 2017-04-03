@@ -64,8 +64,9 @@ object Parser837 extends App {
   import sqlContext.implicits._
   var df = new XmlReader().xmlRdd(sqlContext,rdd)
   var buffer = ArrayBuffer.empty[Long]
-  df = df.select($"interchange.group.transaction.loop")
-  df.select(explode($"loop").as("new_loop")).select(explode($"new_loop.segment.element").as("new_ele")).foreach(t=>println(t(0)))
+  df = df.select($"interchange.group.transaction")
+  df.selectExpr("explode(transaction.loop) as e").selectExpr("explode(e.segment) as Segment","e.Id as EId").selectExpr("explode(Segment.element) as ele","EId","Segment.Id as SId").show()//.selectExpr("explode(ele) as new_ele","EId","SId").show()
+  //df.select(explode($"loop").as("new_loop")).select(explode($"new_loop.segment.element").as("new_ele")).foreach(t=>println(t(0)))
 //    .collect().map(t=>{
 //    println(t(0).getClass)
 //  })
