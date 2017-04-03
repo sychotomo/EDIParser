@@ -32,10 +32,9 @@ import scala.collection.mutable.ArrayBuffer
 case class SelectRow(rowName:Row)
 class EdiReader()
 {
-  def ediParser():String = {
-    val inputReader: Reader = new InputStreamReader(new FileInputStream("/home/abhishek/Desktop/test1.txt"), "ISO-8859-1")
-//    val generatedOutput:Writer = new OutputStreamWriter(new FileOutputStream
-//      ("/home/abhishek/Desktop/output.xml"),"ISO-8859-1")
+  def ediParser(): Any = {
+    val inputReader: Reader = new InputStreamReader(new FileInputStream("/home/vishaka/Downloads/edireader/sample-data/test_claim_1.txt"), "ISO-8859-1")
+//    val writer: Writer = new OutputStreamWriter(new FileOutputStream("/home/vishaka/Downloads/edireader/OP.xml"),"ISO-8859-1")
     val writer: StringWriter = new StringWriter()
     val inputSource = new InputSource(inputReader)
     val ediReader: XMLReader = new EDIReader()
@@ -59,13 +58,70 @@ object Parser837 extends App {
   val sc = new SparkContext(conf)
   val edi = new EdiReader()
   val outputXml = edi.ediParser()
+
+//  val sqlContext = new SQLContext(sc)
+//  import sqlContext.implicits._
+//  var df = sqlContext.read
+//    .format("com.databricks.spark.xml")
+//    .option("rowTag","interchange")
+//    .load("/home/vishaka/Downloads/edireader/OP.xml")
+//
+//  df.printSchema()
+
   val rdd = sc.parallelize(List(outputXml))
   val sqlContext = new SQLContext(sc)
   import sqlContext.implicits._
-  var df = new XmlReader().xmlRdd(sqlContext,rdd)
+  var df = new XmlReader().xmlRdd(sqlContext, rdd.map(x => x.toString))
+  df.printSchema()
   var buffer = ArrayBuffer.empty[Long]
+  df.select("interchange.@Date").show()
   df = df.select($"interchange.group.transaction")
-  df.selectExpr("explode(transaction.loop) as e").selectExpr("explode(e.segment) as Segment","e.Id as EId").selectExpr("explode(Segment.element) as ele","EId","Segment.Id as SId").show()//.selectExpr("explode(ele) as new_ele","EId","SId").show()
+//  df = df.select($"group.transaction")
+  val loop1000_2000 = df.selectExpr("explode(transaction.loop) as l")
+    .selectExpr("explode(l.segment) as Segment", "l")
+    .selectExpr("explode(Segment.element) as ele", "l")
+    .select("l.@Id", "ele.@Id", "ele.#VALUE")
+    .toDF("LoopId", "ElementId", "Value")
+  loop1000_2000.show()
+
+
+  val loop2010 = df.selectExpr("explode(transaction.loop) as l1")
+    .selectExpr("explode(l1.loop) as l")
+    .selectExpr("explode(l.segment) as Segment", "l")
+    .selectExpr("explode(Segment.element) as ele", "l")
+    .select("l.@Id", "ele.@Id", "ele.#VALUE")
+    .toDF("LoopId", "ElementId", "Value")
+  loop2010.show()
+
+
+  val subscriberName = loop2010.filter(loop2010("Value").equalTo("IL"))
+    .select("ElementId")
+    .show()
+
+  val loop2310 = df.selectExpr("explode(transaction.loop) as l1")
+    .selectExpr("explode(l1.loop) as l2")
+    .selectExpr("explode(l2.loop) as l")
+    .selectExpr("explode(l.segment) as Segment", "l")
+    .selectExpr("explode(Segment.element) as ele", "l")
+    .select("l.@Id", "ele.@Id", "ele.#VALUE")
+    .toDF("LoopId", "ElementId", "Value")
+  loop2310.show()
+
+
+  val loop2330 = df.selectExpr("explode(transaction.loop) as l1")
+    .selectExpr("explode(l1.loop) as l2")
+    .selectExpr("explode(l2.loop) as l3")
+    .selectExpr("explode(l3.loop) as l")
+    .selectExpr("explode(l.segment) as Segment", "l")
+    .selectExpr("explode(Segment.element) as ele", "l")
+    .select("l.@Id", "ele.@Id", "ele.#VALUE")
+    .toDF("LoopId", "ElementId", "Value")
+  loop2330.show()
+
+
+
+
+
   //df.select(explode($"loop").as("new_loop")).select(explode($"new_loop.segment.element").as("new_ele")).foreach(t=>println(t(0)))
 //    .collect().map(t=>{
 //    println(t(0).getClass)
@@ -78,10 +134,10 @@ object Parser837 extends App {
 //  val ediRoot = sqlContext.read
 //    .format("com.databricks.spark.xml")
 //      .option("rowTag","interchange")
-//    .load("/home/abhishek/Desktop/output.xml")
-  //val df = ediRoot.select(explode($"interchange").as("ic"))
-  //var explodeDF = ediRoot.withColumn("ic", ediRoot("interchange"))
-  //ediRoot.printSchema()
+//    .load("/home/vishaka/Downloads/edireader/OP.xml")
+//  val df = ediRoot.select(explode($"interchange").as("ic"))
+//  var explodeDF = ediRoot.withColumn("ic", ediRoot("interchange"))
+//  ediRoot.printSchema()
 //  val df = ediRoot.select($"group.transaction.segment.element")
 //  df.select(explode($"element").as("new_ele")).collect.map(t => println(t))
 }
