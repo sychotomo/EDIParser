@@ -1,7 +1,7 @@
 /**
   * Created by abhishek on 30/3/17.
   */
-import com.databricks.spark.xml
+import com.databricks.spark.xml.XmlReader
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SQLContext
@@ -21,8 +21,15 @@ import javax.xml.transform.TransformerException
 import javax.xml.transform.TransformerFactory
 import javax.xml.transform.stream.StreamResult
 import java.io._
-import org.apache.spark.rdd.RDD
 
+import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
+
+import scala.collection.mutable.ArrayBuffer
+
+
+
+case class SelectRow(rowName:Row)
 class EdiReader()
 {
   def ediParser():String = {
@@ -51,17 +58,29 @@ object Parser837 extends App {
   val conf = new SparkConf().setMaster("local").setAppName("EDIReader")
   val sc = new SparkContext(conf)
   val edi = new EdiReader()
-  //val outputXml = edi.ediParser()
-  //val rdd = sc.parallelize(outputXml)
+  val outputXml = edi.ediParser()
+  val rdd = sc.parallelize(List(outputXml))
   val sqlContext = new SQLContext(sc)
   import sqlContext.implicits._
-  val ediRoot = sqlContext.read
-    .format("com.databricks.spark.xml")
-      .option("rowTag","interchange")
-    .load("/home/abhishek/Desktop/output.xml")
+  var df = new XmlReader().xmlRdd(sqlContext,rdd)
+  var buffer = ArrayBuffer.empty[Long]
+  df = df.select($"interchange.group.transaction.loop")
+  df.select(explode($"loop").as("new_loop")).select(explode($"new_loop.segment.element").as("new_ele")).foreach(t=>println(t(0)))
+//    .collect().map(t=>{
+//    println(t(0).getClass)
+//  })
+  //buffer.foreach(t=>println(t(0)))
+  //sqlContext.sql(""" select * from edi """).show()
+  //val rdd = sc.parallelize(outputXml)
+//  val sqlContext = new SQLContext(sc)
+//  import sqlContext.implicits._
+//  val ediRoot = sqlContext.read
+//    .format("com.databricks.spark.xml")
+//      .option("rowTag","interchange")
+//    .load("/home/abhishek/Desktop/output.xml")
   //val df = ediRoot.select(explode($"interchange").as("ic"))
   //var explodeDF = ediRoot.withColumn("ic", ediRoot("interchange"))
   //ediRoot.printSchema()
-  val df = ediRoot.select($"group.transaction.segment.element")
-  df.select(explode($"element").as("new_ele")).collect.map(t => println(t))
+//  val df = ediRoot.select($"group.transaction.segment.element")
+//  df.select(explode($"element").as("new_ele")).collect.map(t => println(t))
 }
