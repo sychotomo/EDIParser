@@ -22,9 +22,6 @@ import javax.xml.transform.TransformerFactory
 import javax.xml.transform.stream.StreamResult
 import java.io._
 
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
-
 import scala.collection.mutable.ArrayBuffer
 
 
@@ -74,70 +71,99 @@ object Parser837 extends App {
   var df = new XmlReader().xmlRdd(sqlContext, rdd.map(x => x.toString))
   df.printSchema()
   var buffer = ArrayBuffer.empty[Long]
-  df.select("interchange.@Date").show()
   df = df.select($"interchange.group.transaction")
 //  df = df.select($"group.transaction")
-  val loop1000_2000 = df.selectExpr("explode(transaction.loop) as l")
-    .selectExpr("explode(l.segment) as Segment", "l")
-    .selectExpr("explode(Segment.element) as ele", "l")
-    .select("l.@Id", "ele.@Id", "ele.#VALUE")
-    .toDF("LoopId", "ElementId", "Value")
-  loop1000_2000.show()
 
+  var explodeDf = sqlContext.emptyDataFrame
+  var i =0
+  while(hasColumn(df, "loop")) {
+    val columnName = df.columns{0}
+    df = df.selectExpr(s"explode($columnName.loop) as loop")
+    if (explodeDf.rdd.isEmpty()) {
+      explodeDf = df.selectExpr("explode(loop.segment) as Segment", "loop")
+        .selectExpr("explode(Segment.element) as ele", "loop")
+        .select("loop.@Id", "ele.@Id", "ele.#VALUE")
+        .toDF("LoopId", "ElementId", "Value")
+//      val Code = when('Value, "41")
+      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01"), col("Value"))
+      explodeDf = explodeDf.withColumn("Code", Code)
+    } else{
+      var tempDf = df.selectExpr("explode(loop.segment) as Segment", "loop")
+        .selectExpr("explode(Segment.element) as ele", "loop")
+        .select("loop.@Id", "ele.@Id", "ele.#VALUE")
+        .toDF("LoopId", "ElementId", "Value")
+      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01"), col("Value"))
+      tempDf = tempDf.withColumn("Code", Code)
+      explodeDf = explodeDf.unionAll(tempDf)
+    }
 
-  val loop2010 = df.selectExpr("explode(transaction.loop) as l1")
-    .selectExpr("explode(l1.loop) as l")
-    .selectExpr("explode(l.segment) as Segment", "l")
-    .selectExpr("explode(Segment.element) as ele", "l")
-    .select("l.@Id", "ele.@Id", "ele.#VALUE")
-    .toDF("LoopId", "ElementId", "Value")
-  loop2010.show()
+//    explodeDf.show()
 
+//    before uncommenting below statements add 'libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0"' to build.sbt
+//    explodeDf.coalesce(1)       //use coalesce only with small data when you use csv
+//      .write
+//      .mode(SaveMode.Overwrite)
+//      .format("com.databricks.spark.csv")
+//      .option("header", "true")
+//      .save("/home/vishaka/Desktop/output"+i+".csv")
+//
+//    i+=1
 
-  val subscriberName = loop2010.filter(loop2010("Value").equalTo("IL"))
-    .select("ElementId")
-    .show()
+  }
 
-  val loop2310 = df.selectExpr("explode(transaction.loop) as l1")
-    .selectExpr("explode(l1.loop) as l2")
-    .selectExpr("explode(l2.loop) as l")
-    .selectExpr("explode(l.segment) as Segment", "l")
-    .selectExpr("explode(Segment.element) as ele", "l")
-    .select("l.@Id", "ele.@Id", "ele.#VALUE")
-    .toDF("LoopId", "ElementId", "Value")
-  loop2310.show()
+  explodeDf.registerTempTable("claims")
 
+  val loop1000 = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 1000")
+  loop1000.show(40)
 
-  val loop2330 = df.selectExpr("explode(transaction.loop) as l1")
-    .selectExpr("explode(l1.loop) as l2")
-    .selectExpr("explode(l2.loop) as l3")
-    .selectExpr("explode(l3.loop) as l")
-    .selectExpr("explode(l.segment) as Segment", "l")
-    .selectExpr("explode(Segment.element) as ele", "l")
-    .select("l.@Id", "ele.@Id", "ele.#VALUE")
-    .toDF("LoopId", "ElementId", "Value")
-  loop2330.show()
+  loop1000.foreach { column =>
+    (column.getLong(0), column.getString(1), column.getString(2)) match {
+      case (1000, "NM101", "41") => submitter(loop1000)
+      case (1000, "NM101", "40") => receiver(loop1000)
+      case _ => true
+    }
+  }
 
+  val loop2010 = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010")
+  loop2010.show(40)
 
+  loop2010.foreach { column =>
+    (column.getLong(0), column.getString(1), column.getString(2)) match {
+      case (2010, "NM101", "IL") => subscriber(loop2010)
+      case (2010, "NM101", "PR") => payer(loop2010)
+      case (2010, "NM101", "85") => billingProvider(loop2010)
+      case _ => true
+    }
+  }
 
+  def hasColumn(df: DataFrame, columnName: String): Boolean = {
+    val column = df.columns{0}
+    df.select(s"$column.*").columns.contains(s"$columnName")
+  }
 
+  def submitter(df: DataFrame): Any = {
+//    val submitterName = df.map{ row =>
+//      val lastName = if (row.getString(1) == "NM103") row.getString(2) else ""
+//      val firstName = if (row.getString(1) == "NM104") row.getString(2) else ""
+//      val middleName = if (row.getString(1) == "NM105") row.getString(2) else ""
+//      lastName + firstName + middleName
+//    }
+//    submitterName.collect().foreach(println)
+  }
+  def receiver(df: DataFrame): Any = {
 
-  //df.select(explode($"loop").as("new_loop")).select(explode($"new_loop.segment.element").as("new_ele")).foreach(t=>println(t(0)))
-//    .collect().map(t=>{
-//    println(t(0).getClass)
-//  })
-  //buffer.foreach(t=>println(t(0)))
-  //sqlContext.sql(""" select * from edi """).show()
-  //val rdd = sc.parallelize(outputXml)
-//  val sqlContext = new SQLContext(sc)
-//  import sqlContext.implicits._
-//  val ediRoot = sqlContext.read
-//    .format("com.databricks.spark.xml")
-//      .option("rowTag","interchange")
-//    .load("/home/vishaka/Downloads/edireader/OP.xml")
-//  val df = ediRoot.select(explode($"interchange").as("ic"))
-//  var explodeDF = ediRoot.withColumn("ic", ediRoot("interchange"))
-//  ediRoot.printSchema()
-//  val df = ediRoot.select($"group.transaction.segment.element")
-//  df.select(explode($"element").as("new_ele")).collect.map(t => println(t))
+  }
+
+  def subscriber(df: DataFrame): Any = {
+
+  }
+
+  def payer(df: DataFrame): Any = {
+
+  }
+
+  def billingProvider(df: DataFrame): Any = {
+
+  }
+
 }
