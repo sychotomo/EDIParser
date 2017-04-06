@@ -22,6 +22,8 @@ import javax.xml.transform.TransformerFactory
 import javax.xml.transform.stream.StreamResult
 import java.io._
 
+import org.apache.spark.sql.types._
+
 import scala.collection.mutable.ArrayBuffer
 
 
@@ -75,29 +77,77 @@ object Parser837 extends App {
 //  df = df.select($"group.transaction")
 
   var explodeDf = sqlContext.emptyDataFrame
-  var i =0
-  while(hasColumn(df, "loop")) {
-    val columnName = df.columns{0}
+  var subElementDf = sqlContext.emptyDataFrame
+  var columnName = df.columns{0}
+
+  while(hasColumn(df, columnName, "loop")) {
     df = df.selectExpr(s"explode($columnName.loop) as loop")
+    columnName = df.columns{0}
+
     if (explodeDf.rdd.isEmpty()) {
       explodeDf = df.selectExpr("explode(loop.segment) as Segment", "loop")
         .selectExpr("explode(Segment.element) as ele", "loop")
         .select("loop.@Id", "ele.@Id", "ele.#VALUE")
-        .toDF("LoopId", "ElementId", "Value")
-//      val Code = when('Value, "41")
-      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01"), col("Value"))
+        .toDF("LoopId", "ElementId", "EleValue")
+      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01"), col("EleValue"))
       explodeDf = explodeDf.withColumn("Code", Code)
+
+//      if (explodeDf.col("EleValue") == null) {
+//        explodeDf = explodeDf.selectExpr("explode(ele.subelement) as subele", "ele", "LoopId")
+//          .select("subele.@Sequence", "subele.#VALUE", "ele.#VALUE", "ele", "loop")
+//          .toDF("Sequence", "SubValue", "EleValue", "ele", "loop")
+//      }
+//      val Sequence = when(col("EleValue").equalTo(null), col("Sequence")).otherwise(null)
+//      val Value = when(col("EleValue").equalTo(null), col("SubValue")).otherwise(col("EleValue"))
+//      explodeDf = explodeDf.withColumn("Value", Value)
+//        .withColumn("Sequence", Sequence)
+//        .select("loop.@Id", "ele.@Id", "Value", "Sequence")
+//        .toDF("LoopId", "ElementId", "Value", "Sequence")
+
+//      explodeDf.show()
     } else{
       var tempDf = df.selectExpr("explode(loop.segment) as Segment", "loop")
         .selectExpr("explode(Segment.element) as ele", "loop")
-        .select("loop.@Id", "ele.@Id", "ele.#VALUE")
-        .toDF("LoopId", "ElementId", "Value")
-      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01"), col("Value"))
+        .select("loop.@Id", "ele.@Id", "ele.#VALUE", "ele")
+        .toDF("LoopId", "ElementId", "EleValue", "ele")
+
+      val Code = when(col("ElementId").equalTo("NM101") || col("ElementId").equalTo("HL01") || col("ElementId").equalTo("CLM01"), col("EleValue"))
       tempDf = tempDf.withColumn("Code", Code)
+
+      if (hasColumn(tempDf, "ele", "subelement")) {
+        if (subElementDf.rdd.isEmpty()) {
+          subElementDf = tempDf.selectExpr("explode(ele.subelement) as subele", "LoopId", "ElementId", "Code")
+            .select("LoopId", "ElementId", "subele.@Sequence", "subele.#VALUE", "Code")
+            .toDF("LoopId", "ElementId", "Sequence", "Value", "Code")
+        } else{
+          val subElementTempDf = tempDf.selectExpr("explode(ele.subelement) as subele", "LoopId", "ElementId", "Code")
+            .select("LoopId", "ElementId", "subele.@Sequence", "subele.#VALUE", "Code")
+            .toDF("LoopId", "ElementId", "Sequence", "Value", "Code")
+
+          subElementDf = subElementDf.unionAll(subElementTempDf)
+        }
+      }
+//      tempDf.foreach { col =>
+//        col.getAs[String]("EleValue") match {
+//          case null => val subelementDf = tempDf.selectExpr(s"explode(${col.getAs("ele")}.subelement) as subele", "ele", "loop")
+//            .select("subele.@Sequence", "subele.#VALUE", "ele.#VALUE", "ele.@Id")
+//            .toDF("Sequence", "SubValue", "EleValue", "EleId")
+//            println("##")
+//            tempDf.printSchema()
+//          case _ =>
+//        }
+//      }
+
+
+      tempDf = tempDf.select("LoopId", "ElementId", "EleValue", "Code")
       explodeDf = explodeDf.unionAll(tempDf)
     }
 
 //    explodeDf.show()
+//    explodeDf.printSchema()
+
+    subElementDf.show()
+
 
 //    before uncommenting below statements add 'libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0"' to build.sbt
 //    explodeDf.coalesce(1)       //use coalesce only with small data when you use csv
@@ -105,65 +155,78 @@ object Parser837 extends App {
 //      .mode(SaveMode.Overwrite)
 //      .format("com.databricks.spark.csv")
 //      .option("header", "true")
-//      .save("/home/vishaka/Desktop/output"+i+".csv")
+//      .save("/home/vishaka/Desktop/output")
+  }
+  var token = ""
+  val explodeRdd = explodeDf.map( row => {
+    if (row.getAs[String]("Code") != null) {
+      token = row.getAs[String]("Code")
+    }
+    Row(row(0), row(1), row(2), token)
+  })
+
+  val schema =   StructType(
+    StructField("LoopId", LongType, true) ::
+      StructField("ElementId", StringType, true) ::
+      StructField("Value", StringType, true) ::
+      StructField("Code", StringType, true) :: Nil)
+
+  df = sqlContext.createDataFrame(explodeRdd, schema)
+  df.show(732)
 //
-//    i+=1
+//
+//  df.registerTempTable("claims")
+//
+//  val loopSubmitter = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 1000 and Code = '41'")
+//  loopSubmitter.show()
+//  submitter(loopSubmitter)
+//
+//  val loopReceiver = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 1000 and Code = '40'")
+//  loopReceiver.show()
+//  receiver(loopReceiver)
+//
+//  val loopSubscriber = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010 and Code = 'IL'")
+//  loopSubscriber.show()
+//  subscriber(loopSubscriber)
+//
+//  val loopPayer = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010 and Code = 'PR'")
+//  loopPayer.show()
+//  payer(loopPayer)
+//
+//  val loopBillingProvider = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010 and Code = '85'")
+//  loopBillingProvider.show()
+//  billingProvider(loopBillingProvider)
+//
+//  val loopPatient = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010 and Code = 'QC'")
+//  loopPatient.show()
+////  patient(loopPatient)
+//
+//  val loopClaim = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2300")
+//  loopClaim.show()
+//
+//  val loopReferringProvider = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2310 and Code = 'DN'")
+//  loopReferringProvider.show()
+//
+//  val loopRenderingProvider = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2310 and Code = '82'")
+//  loopRenderingProvider.show()
+//
+//  val loopServiceFacility = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2310 and Code = '77'")
+//  loopServiceFacility.show()
+//
+//  val loopSupervisingProvider = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2310 and Code = 'DQ'")
+//  loopSupervisingProvider.show()
 
-  }
-
-  explodeDf.registerTempTable("claims")
-
-  val loop1000 = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 1000")
-  loop1000.show(40)
-
-  loop1000.foreach { column =>
-    (column.getLong(0), column.getString(1), column.getString(2)) match {
-      case (1000, "NM101", "41") => submitter(loop1000)
-      case (1000, "NM101", "40") => receiver(loop1000)
-      case _ => true
-    }
-  }
-
-  val loop2010 = sqlContext.sql("SELECT LoopId, ElementId, Value, Code FROM claims WHERE LoopId = 2010")
-  loop2010.show(40)
-
-  loop2010.foreach { column =>
-    (column.getLong(0), column.getString(1), column.getString(2)) match {
-      case (2010, "NM101", "IL") => subscriber(loop2010)
-      case (2010, "NM101", "PR") => payer(loop2010)
-      case (2010, "NM101", "85") => billingProvider(loop2010)
-      case _ => true
-    }
-  }
-
-  def hasColumn(df: DataFrame, columnName: String): Boolean = {
-    val column = df.columns{0}
-    df.select(s"$column.*").columns.contains(s"$columnName")
-  }
-
-  def submitter(df: DataFrame): Any = {
-//    val submitterName = df.map{ row =>
-//      val lastName = if (row.getString(1) == "NM103") row.getString(2) else ""
-//      val firstName = if (row.getString(1) == "NM104") row.getString(2) else ""
-//      val middleName = if (row.getString(1) == "NM105") row.getString(2) else ""
-//      lastName + firstName + middleName
+  //  loop2010.foreach { column =>
+//    (column.getLong(0), column.getString(1), column.getString(2)) match {
+//      case (2010, "NM101", "IL") => subscriber(loop2010)
+//      case (2010, "NM101", "PR") => payer(loop2010)
+//      case (2010, "NM101", "85") => billingProvider(loop2010)
+//      case _ => true
 //    }
-//    submitterName.collect().foreach(println)
+//  }
+
+  def hasColumn(df: DataFrame, column: String, subColumn: String): Boolean = {
+//    val column = df.columns{0}
+    df.select(s"$column.*").columns.contains(s"$subColumn")
   }
-  def receiver(df: DataFrame): Any = {
-
-  }
-
-  def subscriber(df: DataFrame): Any = {
-
-  }
-
-  def payer(df: DataFrame): Any = {
-
-  }
-
-  def billingProvider(df: DataFrame): Any = {
-
-  }
-
 }
